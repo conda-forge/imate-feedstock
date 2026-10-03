@@ -1,13 +1,13 @@
 {% set name = "imate" %}
-{% set version = "0.29.7" %}
+{% set version = "0.29.11" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/imate-{{ version }}.tar.gz
-  sha256: 0f20f3597119253050aeda81471279a4acd3e1418657943bb7dbf972628b86c9
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/imate-{{ version }}.tar.gz
+  sha256: 596b2c5726764f2c87599346cd5a421b6cd7056fde486a680b2a85ce41ca311c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -30,8 +30,8 @@ requirements:
     - pip
   run:
     - python
-    - numpy >1.11
-    - scipy >=1.5
+    - numpy >1.22
+    - scipy >=1.8
     - matplotlib-base >=2.0
 
 test:
